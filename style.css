@@ -872,3 +872,28 @@ footer {
   opacity: 1;
   transform: scale(1);
 }
+
+/* Modal sticky navigation */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 12, 16, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: -40px -40px 20px -40px; /* Offset modal padding */
+}
+
+/* Adjust mobile styles for sticky nav */
+@media (max-width: 768px) {
+  .sticky-nav {
+    flex-wrap: wrap;
+    margin: -30px -20px 20px -20px;
+    padding: 10px;
+  }
+}

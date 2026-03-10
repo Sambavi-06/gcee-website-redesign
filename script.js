@@ -241,12 +241,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "labs": [
-      "https://www.gcee.ac.in/include/ajax/cse/lab/img1.jpg",
-      "https://www.gcee.ac.in/include/ajax/cse/lab/img2.jpg",
-      "https://www.gcee.ac.in/include/ajax/cse/lab/img3.jpg",
-      "https://www.gcee.ac.in/include/ajax/cse/lab/img4.jpg",
-      "https://www.gcee.ac.in/include/ajax/cse/lab/img5.jpg",
-      "https://www.gcee.ac.in/include/ajax/cse/lab/img6.jpg"
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img1.jpg",
+        "name": "CSE Block - GCEE"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img2.jpg",
+        "name": "CSE Lab-1 - GCEE"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img3.jpg",
+        "name": "CSE Lab-2 - GCEE"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img4.jpg",
+        "name": "CSE Lab-3 - GCEE"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img5.jpg",
+        "name": "Hardware Lab"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img6.jpg",
+        "name": "Server Room"
+      }
     ],
     "hod": {
       "name": "Dr. A. Kavitha",
@@ -304,7 +322,8 @@ document.addEventListener('DOMContentLoaded', () => {
         "amount": "RS.60,000.",
         "year": "----"
       }
-    ]
+    ],
+    "facilities_desc": "The department library constitutes more than 1000 volumes of books with varied titles catering to the need of members of the faculty and students. The volumes in the library are regularly updated to the needs on yearly basis. The department also maintains digital library, which enables the students to have an access to the digital contents for the better understanding of theory."
   },
   "it": {
     "title": "Information Technology",
@@ -391,16 +410,46 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "labs": [
-      "https://www.gcee.ac.in/assets/img/main/itlab/it1.jpg",
-      "https://www.gcee.ac.in/assets/img/main/itlab/it2.jpg",
-      "https://www.gcee.ac.in/assets/img/main/itlab/it3.jpg",
-      "https://www.gcee.ac.in/assets/img/main/itlab/it4.jpg",
-      "https://www.gcee.ac.in/include/ajax/it/lab/img1.jpg",
-      "https://www.gcee.ac.in/include/ajax/it/lab/img2.jpg",
-      "https://www.gcee.ac.in/include/ajax/it/lab/img3.jpg",
-      "https://www.gcee.ac.in/include/ajax/it/lab/img4.jpg",
-      "https://www.gcee.ac.in/include/ajax/it/lab/img5.jpg",
-      "https://www.gcee.ac.in/include/ajax/it/lab/img6.jpg"
+      {
+        "img": "https://www.gcee.ac.in/assets/img/main/itlab/it1.jpg",
+        "name": "Facility 1"
+      },
+      {
+        "img": "https://www.gcee.ac.in/assets/img/main/itlab/it2.jpg",
+        "name": "Facility 2"
+      },
+      {
+        "img": "https://www.gcee.ac.in/assets/img/main/itlab/it3.jpg",
+        "name": "Facility 3"
+      },
+      {
+        "img": "https://www.gcee.ac.in/assets/img/main/itlab/it4.jpg",
+        "name": "Facility 4"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/it/lab/img1.jpg",
+        "name": "Facility 5"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/it/lab/img2.jpg",
+        "name": "Facility 6"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/it/lab/img3.jpg",
+        "name": "Facility 7"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/it/lab/img4.jpg",
+        "name": "Facility 8"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/it/lab/img5.jpg",
+        "name": "Facility 9"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/it/lab/img6.jpg",
+        "name": "Facility 10"
+      }
     ],
     "hod": null
   },
@@ -459,12 +508,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "labs": [
-      "https://www.gcee.ac.in/include/ajax/ece/lab/img1.jpg",
-      "https://www.gcee.ac.in/include/ajax/ece/lab/img2.jpg",
-      "https://www.gcee.ac.in/include/ajax/ece/lab/img3.jpg",
-      "https://www.gcee.ac.in/include/ajax/ece/lab/img4.jpg",
-      "https://www.gcee.ac.in/include/ajax/ece/lab/img5.jpg",
-      "https://www.gcee.ac.in/include/ajax/ece/lab/img6.jpg"
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/ece/lab/img1.jpg",
+        "name": "Facility 1"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/ece/lab/img2.jpg",
+        "name": "Facility 2"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/ece/lab/img3.jpg",
+        "name": "Facility 3"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/ece/lab/img4.jpg",
+        "name": "Facility 4"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/ece/lab/img5.jpg",
+        "name": "Facility 5"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/ece/lab/img6.jpg",
+        "name": "Facility 6"
+      }
     ],
     "hod": null
   },
@@ -523,12 +590,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "labs": [
-      "https://www.gcee.ac.in/include/ajax/eee/lab/img1.jpg",
-      "https://www.gcee.ac.in/include/ajax/eee/lab/img2.jpg",
-      "https://www.gcee.ac.in/include/ajax/eee/lab/img3.jpg",
-      "https://www.gcee.ac.in/include/ajax/eee/lab/img4.jpg",
-      "https://www.gcee.ac.in/include/ajax/eee/lab/img5.jpg",
-      "https://www.gcee.ac.in/include/ajax/eee/lab/img6.jpg"
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/eee/lab/img1.jpg",
+        "name": "Facility 1"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/eee/lab/img2.jpg",
+        "name": "Facility 2"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/eee/lab/img3.jpg",
+        "name": "Facility 3"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/eee/lab/img4.jpg",
+        "name": "Facility 4"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/eee/lab/img5.jpg",
+        "name": "Facility 5"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/eee/lab/img6.jpg",
+        "name": "Facility 6"
+      }
     ],
     "hod": {
       "name": "Dr.M.Mohammadha Hussaini",
@@ -580,13 +665,34 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "labs": [
-      "https://www.gcee.ac.in/include/ajax/mech/lab/img1.jpg",
-      "https://www.gcee.ac.in/include/ajax/mech/lab/img2.jpg",
-      "https://www.gcee.ac.in/include/ajax/mech/lab/img3.jpg",
-      "https://www.gcee.ac.in/include/ajax/mech/lab/img4.jpg",
-      "https://www.gcee.ac.in/include/ajax/mech/lab/img5.jpg",
-      "https://www.gcee.ac.in/include/ajax/mech/lab/img7.jpg",
-      "https://www.gcee.ac.in/include/ajax/mech/lab/img16.jpg"
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/mech/lab/img1.jpg",
+        "name": "Facility 1"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/mech/lab/img2.jpg",
+        "name": "Facility 2"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/mech/lab/img3.jpg",
+        "name": "Facility 3"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/mech/lab/img4.jpg",
+        "name": "Facility 4"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/mech/lab/img5.jpg",
+        "name": "Facility 5"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/mech/lab/img7.jpg",
+        "name": "Facility 6"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/mech/lab/img16.jpg",
+        "name": "Facility 7"
+      }
     ],
     "hod": null
   },
@@ -603,11 +709,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "labs": [
-      "https://www.gcee.ac.in/include/ajax/auto/lab/img1.jpg",
-      "https://www.gcee.ac.in/include/ajax/auto/lab/img2.jpg",
-      "https://www.gcee.ac.in/include/ajax/auto/lab/img3.jpg",
-      "https://www.gcee.ac.in/include/ajax/auto/lab/img4.jpg",
-      "https://www.gcee.ac.in/include/ajax/auto/lab/img5.jpg"
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/auto/lab/img1.jpg",
+        "name": "Facility 1"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/auto/lab/img2.jpg",
+        "name": "Facility 2"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/auto/lab/img3.jpg",
+        "name": "Facility 3"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/auto/lab/img4.jpg",
+        "name": "Facility 4"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/auto/lab/img5.jpg",
+        "name": "Facility 5"
+      }
     ],
     "hod": null
   },
@@ -636,18 +757,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "labs": [
-      "https://www.gcee.ac.in/include/ajax/civil/lab/img1.jpg",
-      "https://www.gcee.ac.in/include/ajax/civil/lab/img2.jpg",
-      "https://www.gcee.ac.in/include/ajax/civil/lab/img3.jpg",
-      "https://www.gcee.ac.in/include/ajax/civil/lab/img4.jpg",
-      "https://www.gcee.ac.in/include/ajax/civil/lab/img5.jpg",
-      "https://www.gcee.ac.in/include/ajax/civil/lab/img6.jpg"
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/civil/lab/img1.jpg",
+        "name": "Facility 1"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/civil/lab/img2.jpg",
+        "name": "Facility 2"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/civil/lab/img3.jpg",
+        "name": "Facility 3"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/civil/lab/img4.jpg",
+        "name": "Facility 4"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/civil/lab/img5.jpg",
+        "name": "Facility 5"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/civil/lab/img6.jpg",
+        "name": "Facility 6"
+      }
     ],
     "hod": null
   }
 };
-
-  // Provide a fallback for other departments
+// Provide a fallback for other departments
   const defaultDept = {
     title: "Engineering Department",
     desc: "A premier department offering high quality technical education and research opportunities.",
@@ -667,8 +805,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const deptKey = card.getAttribute('data-dept');
       const data = deptData[deptKey] || { ...defaultDept, title: card.querySelector('h3').innerText };
       
-      // Inject HTML
-      
+      const navHtml = `
+        <div class="modal-nav sticky-nav">
+          <button class="modal-nav-btn active" data-scroll="modal-about">Info</button>
+          ${data.hod || (data.staff && data.staff.length) ? '<button class="modal-nav-btn" data-scroll="modal-staff">Staff</button>' : ''}
+          ${data.projects && data.projects.length ? '<button class="modal-nav-btn" data-scroll="modal-projects">Activities</button>' : ''}
+          ${data.labs && data.labs.length ? '<button class="modal-nav-btn" data-scroll="modal-labs">Facilities</button>' : ''}
+        </div>
+      `;
+
       let filterHtml = '';
       if (data.staff && data.staff.length > 0) {
         filterHtml = `
@@ -685,7 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let hodHtml = '';
       if (data.hod) {
          hodHtml = `
-           <h3 style="margin-top: 2rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Head of the Department</h3>
+           <h3 style="margin-top: 1rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Head of the Department</h3>
            <div class="staff-card hod-card" style="max-width: 400px; margin: 0 auto 3rem; background: rgba(99, 102, 241, 0.05); border-color: rgba(99, 102, 241, 0.3);">
             <img src="${data.hod.img}" alt="${data.hod.name}" class="staff-img" onerror="this.src='https://via.placeholder.com/120x120?text=HOD'">
             <h4 style="font-size: 1.3rem;">${data.hod.name}</h4>
@@ -696,7 +841,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       let staffHtml = '';
-      if (data.staff) {
+      if (data.staff && data.staff.length > 0) {
           data.staff.forEach(s => {
             let roleCat = 'staff';
             if(s.role.toLowerCase().includes('assistant professor')) roleCat = 'assistant';
@@ -716,7 +861,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let projHtml = '';
       if (data.projects && data.projects.length > 0) {
-        projHtml = '<br><h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Funded Projects</h3>' +
+        projHtml = '<div id="modal-projects" class="modal-section" style="padding-top: 4rem;"><h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Activities & Funded Projects</h3>' +
           '<div class="projects-container" style="display: flex; gap: 1.5rem; overflow-x: auto; padding-bottom: 1.5rem; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--primary-color) var(--surface-color);">' + 
           data.projects.map((p, i) => `
             <div class="project-card interactive-card glow-on-hover" style="min-width: 320px; max-width: 350px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; scroll-snap-align: start; flex-shrink: 0; backdrop-filter: blur(10px); position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: left;">
@@ -728,34 +873,88 @@ document.addEventListener('DOMContentLoaded', () => {
               ${p.year !== '----' ? `<p style="font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center; gap: 8px;"><svg style="min-width: 16px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Year: ${p.year}</p>` : ''}
             </div>
           `).join('') +
-          '</div>';
+          '</div></div>';
+      }
+
+      let facilitiesDescHtml = '';
+      if (data.facilities_desc) {
+          facilitiesDescHtml = `<p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; padding: 10px 0;">${data.facilities_desc}</p>`;
       }
 
       let labHtml = '';
       if (data.labs && data.labs.length > 0) {
-        labHtml = '<br><h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Lab Facilities</h3>' +
-          '<div class="staff-grid" style="margin-bottom: 2rem;">' + 
-          data.labs.map(img => `<img src="${img}" style="width:100%; height:200px; object-fit:cover; border-radius:15px; border: 1px solid var(--surface-border);">`).join('') +
-          '</div>';
+        labHtml = `<div id="modal-labs" class="modal-section" style="padding-top: 4rem;">
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Department Facilities</h3>
+          <div style="text-align: left;">${facilitiesDescHtml}</div>
+          <div class="staff-grid" style="margin-bottom: 2rem;">` + 
+          data.labs.map(lab => `
+            <div class="facility-card glow-on-hover" style="text-align: center; background: rgba(255, 255, 255, 0.02); border-radius: 15px; border: 1px solid var(--surface-border); overflow: hidden; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; padding-bottom: 10px;">
+              <img src="${lab.img}" alt="${lab.name}" style="width:100%; height:200px; object-fit:cover; margin-bottom: 10px;">
+              <h4 style="color: var(--text-primary); font-size: 1.1rem; padding: 5px; font-weight: 500;">${lab.name}</h4>
+            </div>
+          `).join('') +
+          '</div></div>';
       }
       
       modalBody.innerHTML = `
-        <div class="dept-header">
+        ${navHtml}
+        <div id="modal-about" class="modal-section dept-header" style="padding-top: 3rem;">
           <img src="${data.img}" alt="${data.title}" class="dept-hero-img" onerror="this.src='https://via.placeholder.com/600x250?text=Department'">
           <div class="dept-info">
             <h2 class="text-gradient" style="margin-bottom: 1rem; font-size: 2.2rem;">${data.title}</h2>
-            <p style="color: var(--text-secondary); line-height: 1.8;">${data.desc}</p>
+            <p style="color: var(--text-secondary); line-height: 1.8; text-align: left;">${data.desc}</p>
           </div>
         </div>
-        ${hodHtml}
-        ${filterHtml ? '<h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Staff Directory</h3>' : ''}
-        ${filterHtml}
-        <div class="staff-grid" id="modal-staff-grid">
-          ${staffHtml.length > 0 ? staffHtml : (filterHtml ? '<p>No staff directory records found.</p>' : '')}
-        </div>
+        
+        ${(hodHtml || staffHtml) ? `<div id="modal-staff" class="modal-section" style="padding-top: 4rem;">
+            ${hodHtml}
+            ${filterHtml ? '<h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Staff Directory</h3>' : ''}
+            ${filterHtml}
+            <div class="staff-grid" id="modal-staff-grid">
+            ${staffHtml.length > 0 ? staffHtml : (filterHtml ? '<p>No staff directory records found.</p>' : '')}
+            </div>
+        </div>` : ''}
+        
         ${projHtml}
         ${labHtml}
       `;
+
+      // Navigation Logic
+      const navBtns = modalBody.querySelectorAll('.modal-nav-btn');
+      navBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const targetId = btn.getAttribute('data-scroll');
+          const targetEl = modalBody.querySelector('#' + targetId);
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            navBtns.forEach(b => {
+                b.classList.remove('active');
+                b.style.color = 'var(--text-secondary)';
+                b.style.borderBottom = '2px solid transparent';
+            });
+            btn.classList.add('active');
+            btn.style.color = 'var(--primary-color)';
+            btn.style.borderBottom = '2px solid var(--primary-color)';
+          }
+        });
+      });
+      // Set initial styles for nav
+      if(navBtns.length > 0) {
+          navBtns.forEach(b => {
+              b.style.background = 'transparent';
+              b.style.border = 'none';
+              b.style.borderBottom = '2px solid transparent';
+              b.style.color = 'var(--text-secondary)';
+              b.style.padding = '10px 15px';
+              b.style.fontWeight = 'bold';
+              b.style.cursor = 'pointer';
+              b.style.fontSize = '1.1rem';
+              b.style.transition = 'all 0.3s';
+          });
+          navBtns[0].classList.add('active');
+          navBtns[0].style.color = 'var(--primary-color)';
+          navBtns[0].style.borderBottom = '2px solid var(--primary-color)';
+      }
 
       // Filter Logic
       const filterBtns = modalBody.querySelectorAll('.filter-btn');
@@ -801,7 +1000,6 @@ document.addEventListener('DOMContentLoaded', () => {
           card.style.boxShadow = 'none';
         });
       });
-
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent background scrolling
     });

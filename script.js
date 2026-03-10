@@ -254,13 +254,56 @@ document.addEventListener('DOMContentLoaded', () => {
       "img": "https://www.gcee.ac.in/include/ajax/cse/associate_professor3.jpg",
       "details": "Qualification: M.E.,Ph.D<br>Experience : 32 Years<br>Area of Specialization : Semantic Web<br>Conferences & Journals: 3 & 6<br>Contact Number :9442513055<br>E-Mail ID :kavitha@gcee.ac.in,kavitha.irtt@gmail.com"
     },
-    "activities": [
-      "Special Talk on \"Role of Cyber Security in IT Industries\" By Dr.P.G.Om Prakash.",
-      "A Guest Lecture arranged on \"Software Testing\" by Mr.V.J.Chandresh.",
-      "A Seminar on \"Agile Software Methodology\" on 22.09.2015 by Mr.Thirumurugan Srinivasan.",
-      "One Day FDP on \"Free and Open Source Software\" by Mrs.S.Kavitha.",
-      "Two Days Workshop on \"Free and Open Source Software\" for Non Teaching staff member of our institition.",
-      "FDP on Python Programming."
+    "projects": [
+      {
+        "sno": "1",
+        "title": "Entrepreneurship promotion programe through training on utlization of software technologies for Image editing, 2D Animation,Offset printing,Website design for empowerment of unemployed graduate women",
+        "agency": "DSIR, New Delhi",
+        "amount": "RS.7,14,000",
+        "year": "2011"
+      },
+      {
+        "sno": "2",
+        "title": "Semantic Web and Ontological Engineering\" staff development Programme",
+        "agency": "AICTE-Chennai, PSG College of Tech and HP Industries-Bangalore",
+        "amount": "RS.2,00,000",
+        "year": "2010"
+      },
+      {
+        "sno": "3",
+        "title": "Cloud Computing, Seminar",
+        "agency": "CSIR",
+        "amount": "Rs.40,000",
+        "year": "2009"
+      },
+      {
+        "sno": "4",
+        "title": "Nano Technology in Engineering and Medicine- A new Milestone",
+        "agency": "AICTE",
+        "amount": "RS.60,000",
+        "year": "2009"
+      },
+      {
+        "sno": "5",
+        "title": "Open Source Web Development using Lamp",
+        "agency": "AICTE",
+        "amount": "RS.60,000",
+        "year": "2009"
+      },
+      {
+        "sno": "6",
+        "title": "IBM Community Software",
+        "agency": "IBM Software Labs,Bangalore",
+        "amount": "--",
+        "year": "2008"
+      },
+      {
+        "sno": "7",
+        "title": "Neural Networks applied to Pattern Recognisation",
+        "agency": "AICTE-ISTE",
+        "amount": "RS.60,000.",
+        "year": "----"
+      }
     ]
   },
   "it": {
@@ -671,12 +714,21 @@ document.addEventListener('DOMContentLoaded', () => {
           });
       }
 
-      let actHtml = '';
-      if (data.activities && data.activities.length > 0) {
-        actHtml = '<br><h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Activities</h3>' +
-          '<ul style="text-align: left; background: var(--surface-color); padding: 2rem 2rem 2rem 3rem; border-radius: 15px; border: 1px solid var(--surface-border); color: var(--text-secondary);">' + 
-          data.activities.map(act => `<li style="margin-bottom: 0.8rem;">${act}</li>`).join('') +
-          '</ul>';
+      let projHtml = '';
+      if (data.projects && data.projects.length > 0) {
+        projHtml = '<br><h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Funded Projects</h3>' +
+          '<div class="projects-container" style="display: flex; gap: 1.5rem; overflow-x: auto; padding-bottom: 1.5rem; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--primary-color) var(--surface-color);">' + 
+          data.projects.map((p, i) => `
+            <div class="project-card interactive-card glow-on-hover" style="min-width: 320px; max-width: 350px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; scroll-snap-align: start; flex-shrink: 0; backdrop-filter: blur(10px); position: relative; overflow: hidden; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: left;">
+              <div style="position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));"></div>
+              ${p.amount !== '--' && p.amount !== '----' && p.amount ? `<div style="position: absolute; top: 15px; right: 15px; background: rgba(99, 102, 241, 0.15); color: #fff; font-size: 0.75rem; font-weight: bold; padding: 0.4rem 0.8rem; border-radius: 20px; border: 1px solid rgba(99,102,241,0.3); box-shadow: 0 4px 10px rgba(0,0,0,0.2);">${p.amount}</div>` : ''}
+              <div style="font-size: 3rem; color: rgba(255, 255, 255, 0.05); font-weight: 800; font-family: var(--font-heading); margin-bottom: 0.5rem; line-height: 1; position: absolute; right: 20px; bottom: 10px;">0${p.sno}</div>
+              <h4 style="font-size: 1.15rem; color: var(--text-primary); margin-bottom: 1.5rem; line-height: 1.5; padding-right: 2rem;">${p.title}</h4>
+              <p style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 8px;"><svg style="min-width: 16px; margin-top:2px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> <span style="flex:1;">${p.agency}</span></p>
+              ${p.year !== '----' ? `<p style="font-size: 0.85rem; color: var(--text-secondary); display: flex; align-items: center; gap: 8px;"><svg style="min-width: 16px;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Year: ${p.year}</p>` : ''}
+            </div>
+          `).join('') +
+          '</div>';
       }
 
       let labHtml = '';
@@ -701,7 +753,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="staff-grid" id="modal-staff-grid">
           ${staffHtml.length > 0 ? staffHtml : (filterHtml ? '<p>No staff directory records found.</p>' : '')}
         </div>
-        ${actHtml}
+        ${projHtml}
         ${labHtml}
       `;
 
@@ -736,6 +788,19 @@ document.addEventListener('DOMContentLoaded', () => {
         filterBtns[0].style.background = 'linear-gradient(135deg, var(--primary-color), #8b5cf6)';
         filterBtns[0].style.color = 'white';
       }
+
+      // Add neat interactive effects for the horizontal project scroll
+      const projectCards = modalBody.querySelectorAll('.project-card');
+      projectCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-10px) scale(1.02)';
+          card.style.boxShadow = '0 15px 35px rgba(0,0,0,0.5), inset 0 0 20px rgba(99, 102, 241, 0.1)';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0) scale(1)';
+          card.style.boxShadow = 'none';
+        });
+      });
 
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent background scrolling

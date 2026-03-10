@@ -162,12 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
         "details": "Qualification: M.E., Ph.D<br>Experience : 30 Years<br>Area of Specialization : Computer Networks, Microprocessor and Microcontrolers, Database<br>Conference : 2<br>Journal Publications : 10<br>Contact Number :9842794127<br>E-Mail ID :venkatachalam@irttech.ac.in"
       },
       {
-        "name": "Dr.A.Kavidha",
-        "role": "Associate Professor, Dept. Of CSE, GCEE",
-        "img": "https://www.gcee.ac.in/include/ajax/cse/associate_professor3.jpg",
-        "details": "Qualification: M.E.,Ph.D<br>Experience : 32 Years<br>Area of Specialization : Semantic Web<br>Conferences & Journals: 3 & 6<br>Contact Number :9442513055<br>E-Mail ID :kavitha@gcee.ac.in,kavitha.irtt@gmail.com"
-      },
-      {
         "name": "Mrs.M.Annapoorani",
         "role": "Assistant Professor(SR), Dept. Of CSE, IRTT",
         "img": "https://www.gcee.ac.in/include/ajax/cse/assistant_professor1.jpg",
@@ -247,14 +241,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ],
     "labs": [
-      "https://www.gcee.ac.in/include/ajax/cse/lab/img2.jpg",
       "https://www.gcee.ac.in/include/ajax/cse/lab/img1.jpg",
+      "https://www.gcee.ac.in/include/ajax/cse/lab/img2.jpg",
       "https://www.gcee.ac.in/include/ajax/cse/lab/img3.jpg",
       "https://www.gcee.ac.in/include/ajax/cse/lab/img4.jpg",
       "https://www.gcee.ac.in/include/ajax/cse/lab/img5.jpg",
       "https://www.gcee.ac.in/include/ajax/cse/lab/img6.jpg"
     ],
-    "hod": null
+    "hod": {
+      "name": "Dr. A. Kavitha",
+      "role": "Professor & Head of the Department",
+      "img": "https://www.gcee.ac.in/include/ajax/cse/associate_professor3.jpg",
+      "details": "Qualification: M.E.,Ph.D<br>Experience : 32 Years<br>Area of Specialization : Semantic Web<br>Conferences & Journals: 3 & 6<br>Contact Number :9442513055<br>E-Mail ID :kavitha@gcee.ac.in,kavitha.irtt@gmail.com"
+    },
+    "activities": [
+      "Special Talk on \"Role of Cyber Security in IT Industries\" By Dr.P.G.Om Prakash.",
+      "A Guest Lecture arranged on \"Software Testing\" by Mr.V.J.Chandresh.",
+      "A Seminar on \"Agile Software Methodology\" on 22.09.2015 by Mr.Thirumurugan Srinivasan.",
+      "One Day FDP on \"Free and Open Source Software\" by Mrs.S.Kavitha.",
+      "Two Days Workshop on \"Free and Open Source Software\" for Non Teaching staff member of our institition.",
+      "FDP on Python Programming."
+    ]
   },
   "it": {
     "title": "Information Technology",
@@ -619,22 +626,63 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Inject HTML
       
-      let staffHtml = '';
-      data.staff.forEach(s => {
-        staffHtml += `
-          <div class="staff-card">
-            <img src="${s.img}" alt="${s.name}" class="staff-img" onerror="this.src='https://via.placeholder.com/120x120?text=Staff'">
-            <h4>${s.name}</h4>
-            <p>${s.role}</p>
-            <div class="details">${s.details}</div>
+      let filterHtml = '';
+      if (data.staff && data.staff.length > 0) {
+        filterHtml = `
+          <div class="staff-filter-controls" style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+            <button class="btn btn-outline filter-btn active" data-filter="all" style="padding: 0.5rem 1rem; border-radius: 8px;">All</button>
+            <button class="btn btn-outline filter-btn" data-filter="professor" style="padding: 0.5rem 1rem; border-radius: 8px;">Professors</button>
+            <button class="btn btn-outline filter-btn" data-filter="associate" style="padding: 0.5rem 1rem; border-radius: 8px;">Associate Prof.</button>
+            <button class="btn btn-outline filter-btn" data-filter="assistant" style="padding: 0.5rem 1rem; border-radius: 8px;">Assistant Prof.</button>
+            <button class="btn btn-outline filter-btn" data-filter="staff" style="padding: 0.5rem 1rem; border-radius: 8px;">Staff</button>
           </div>
         `;
-      });
+      }
+
+      let hodHtml = '';
+      if (data.hod) {
+         hodHtml = `
+           <h3 style="margin-top: 2rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Head of the Department</h3>
+           <div class="staff-card hod-card" style="max-width: 400px; margin: 0 auto 3rem; background: rgba(99, 102, 241, 0.05); border-color: rgba(99, 102, 241, 0.3);">
+            <img src="${data.hod.img}" alt="${data.hod.name}" class="staff-img" onerror="this.src='https://via.placeholder.com/120x120?text=HOD'">
+            <h4 style="font-size: 1.3rem;">${data.hod.name}</h4>
+            <p style="color: var(--primary-color); font-weight: bold;">${data.hod.role}</p>
+            <div class="details" style="font-size: 0.9rem; word-wrap: break-word;">${data.hod.details}</div>
+          </div>
+         `;
+      }
+
+      let staffHtml = '';
+      if (data.staff) {
+          data.staff.forEach(s => {
+            let roleCat = 'staff';
+            if(s.role.toLowerCase().includes('assistant professor')) roleCat = 'assistant';
+            else if(s.role.toLowerCase().includes('associate professor')) roleCat = 'associate';
+            else if(s.role.toLowerCase().includes('professor')) roleCat = 'professor';
+
+            staffHtml += `
+              <div class="staff-card filter-item" data-role="${roleCat}">
+                <img src="${s.img}" alt="${s.name}" class="staff-img" onerror="this.src='https://via.placeholder.com/120x120?text=Staff'">
+                <h4>${s.name}</h4>
+                <p>${s.role}</p>
+                <div class="details" style="word-wrap: break-word;">${s.details}</div>
+              </div>
+            `;
+          });
+      }
+
+      let actHtml = '';
+      if (data.activities && data.activities.length > 0) {
+        actHtml = '<br><h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Activities</h3>' +
+          '<ul style="text-align: left; background: var(--surface-color); padding: 2rem 2rem 2rem 3rem; border-radius: 15px; border: 1px solid var(--surface-border); color: var(--text-secondary);">' + 
+          data.activities.map(act => `<li style="margin-bottom: 0.8rem;">${act}</li>`).join('') +
+          '</ul>';
+      }
 
       let labHtml = '';
       if (data.labs && data.labs.length > 0) {
-        labHtml = '<h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Lab Facilities</h3>' +
-          '<div class="staff-grid">' + 
+        labHtml = '<br><h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Lab Facilities</h3>' +
+          '<div class="staff-grid" style="margin-bottom: 2rem;">' + 
           data.labs.map(img => `<img src="${img}" style="width:100%; height:200px; object-fit:cover; border-radius:15px; border: 1px solid var(--surface-border);">`).join('') +
           '</div>';
       }
@@ -647,12 +695,47 @@ document.addEventListener('DOMContentLoaded', () => {
             <p style="color: var(--text-secondary); line-height: 1.8;">${data.desc}</p>
           </div>
         </div>
-        <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Staff Directory</h3>
-        <div class="staff-grid">
-          ${staffHtml.length > 0 ? staffHtml : '<p>No staff directory records found.</p>'}
+        ${hodHtml}
+        ${filterHtml ? '<h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Staff Directory</h3>' : ''}
+        ${filterHtml}
+        <div class="staff-grid" id="modal-staff-grid">
+          ${staffHtml.length > 0 ? staffHtml : (filterHtml ? '<p>No staff directory records found.</p>' : '')}
         </div>
+        ${actHtml}
         ${labHtml}
       `;
+
+      // Filter Logic
+      const filterBtns = modalBody.querySelectorAll('.filter-btn');
+      const filterItems = Array.from(modalBody.querySelectorAll('.filter-item'));
+      
+      if(filterBtns.length > 0) {
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+              b.classList.remove('active');
+              b.style.background = 'transparent';
+              b.style.color = 'var(--text-primary)';
+            });
+            btn.classList.add('active');
+            btn.style.background = 'linear-gradient(135deg, var(--primary-color), #8b5cf6)';
+            btn.style.color = 'white';
+            
+            const category = btn.getAttribute('data-filter');
+            filterItems.forEach(item => {
+              if (category === 'all' || item.getAttribute('data-role') === category) {
+                item.style.display = 'block';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          });
+        });
+        
+        // Initial state styled as active button
+        filterBtns[0].style.background = 'linear-gradient(135deg, var(--primary-color), #8b5cf6)';
+        filterBtns[0].style.color = 'white';
+      }
 
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent background scrolling

@@ -242,28 +242,22 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     "labs": [
       {
-        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img1.jpg",
-        "name": "CSE Block - GCEE"
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img1.jpg"
       },
       {
-        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img2.jpg",
-        "name": "CSE Lab-1 - GCEE"
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img2.jpg"
       },
       {
-        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img3.jpg",
-        "name": "CSE Lab-2 - GCEE"
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img3.jpg"
       },
       {
-        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img4.jpg",
-        "name": "CSE Lab-3 - GCEE"
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img4.jpg"
       },
       {
-        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img5.jpg",
-        "name": "Hardware Lab"
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img5.jpg"
       },
       {
-        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img6.jpg",
-        "name": "Server Room"
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img6.jpg"
       }
     ],
     "hod": {
@@ -323,7 +317,25 @@ document.addEventListener('DOMContentLoaded', () => {
         "year": "----"
       }
     ],
-    "facilities_desc": "The department library constitutes more than 1000 volumes of books with varied titles catering to the need of members of the faculty and students. The volumes in the library are regularly updated to the needs on yearly basis. The department also maintains digital library, which enables the students to have an access to the digital contents for the better understanding of theory."
+    "facilities_desc": "The department library constitutes more than 1000 volumes of books with varied titles catering to the need of members of the faculty and students. The volumes in the library are regularly updated to the needs on yearly basis. The department also maintains digital library, which enables the students to have an access to the digital contents for the better understanding of theory.",
+    "facilities_slider": [
+      {
+        "img": "https://www.gcee.ac.in/assets/img/main/cse01.jpg",
+        "caption": "CSE Block - GCEE"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img2.jpg",
+        "caption": "CSE Lab-1 - GCEE"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img1.jpg",
+        "caption": "CSE Lab-2 - GCEE"
+      },
+      {
+        "img": "https://www.gcee.ac.in/include/ajax/cse/lab/img3.jpg",
+        "caption": "CSE Lab-3 - GCEE"
+      }
+    ]
   },
   "it": {
     "title": "Information Technology",
@@ -808,9 +820,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const navHtml = `
         <div class="modal-nav sticky-nav">
           <button class="modal-nav-btn active" data-scroll="modal-about">Info</button>
+          ${data.facilities_desc || (data.labs && data.labs.length) ? '<button class="modal-nav-btn" data-scroll="modal-facilities">Facilities</button>' : ''}
           ${data.hod || (data.staff && data.staff.length) ? '<button class="modal-nav-btn" data-scroll="modal-staff">Staff</button>' : ''}
           ${data.projects && data.projects.length ? '<button class="modal-nav-btn" data-scroll="modal-projects">Activities</button>' : ''}
-          ${data.labs && data.labs.length ? '<button class="modal-nav-btn" data-scroll="modal-labs">Facilities</button>' : ''}
+          ${data.labs && data.labs.length ? '<button class="modal-nav-btn" data-scroll="modal-labs">Laboratories</button>' : ''}
         </div>
       `;
 
@@ -877,20 +890,49 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       let facilitiesDescHtml = '';
-      if (data.facilities_desc) {
-          facilitiesDescHtml = `<p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; padding: 10px 0;">${data.facilities_desc}</p>`;
+      if (data.facilities_desc || (data.facilities_slider && data.facilities_slider.length > 0)) {
+          let sliderHtml = '';
+          if (data.facilities_slider) {
+             const slides = data.facilities_slider.map((slide, i) => `
+               <div class="fac-slide ${i === 0 ? 'active' : ''}" data-index="${i}">
+                 <img src="${slide.img}" alt="${slide.caption}" class="fac-img">
+                 <div class="fac-caption">${slide.caption}</div>
+               </div>
+             `).join('');
+             
+             const dots = data.facilities_slider.map((_, i) => `
+               <div class="fac-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></div>
+             `).join('');
+
+             sliderHtml = `
+               <div class="fac-slider-container">
+                 <div class="fac-slides">
+                   ${slides}
+                 </div>
+                 <button class="fac-prev">&#10094;</button>
+                 <button class="fac-next">&#10095;</button>
+                 <div class="fac-dots">
+                   ${dots}
+                 </div>
+               </div>
+             `;
+          }
+
+          facilitiesDescHtml = `<div id="modal-facilities" class="modal-section" style="padding-top: 4rem; text-align: left;">
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Department Facilities</h3>
+            ${data.facilities_desc ? `<p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">${data.facilities_desc}</p>` : ''}
+            ${sliderHtml}
+          </div>`;
       }
 
       let labHtml = '';
       if (data.labs && data.labs.length > 0) {
         labHtml = `<div id="modal-labs" class="modal-section" style="padding-top: 4rem;">
-          <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Department Facilities</h3>
-          <div style="text-align: left;">${facilitiesDescHtml}</div>
+          <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Laboratories</h3>
           <div class="staff-grid" style="margin-bottom: 2rem;">` + 
           data.labs.map(lab => `
-            <div class="facility-card glow-on-hover" style="text-align: center; background: rgba(255, 255, 255, 0.02); border-radius: 15px; border: 1px solid var(--surface-border); overflow: hidden; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; padding-bottom: 10px;">
-              <img src="${lab.img}" alt="${lab.name}" style="width:100%; height:200px; object-fit:cover; margin-bottom: 10px;">
-              <h4 style="color: var(--text-primary); font-size: 1.1rem; padding: 5px; font-weight: 500;">${lab.name}</h4>
+            <div class="facility-card glow-on-hover" style="background: rgba(255, 255, 255, 0.02); border-radius: 15px; border: 1px solid var(--surface-border); overflow: hidden; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;">
+              <img src="${lab.img || lab}" alt="Laboratory" style="width:100%; height:200px; object-fit:cover; display:block;">
             </div>
           `).join('') +
           '</div></div>';
@@ -906,6 +948,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
         
+        ${facilitiesDescHtml}
+        
         ${(hodHtml || staffHtml) ? `<div id="modal-staff" class="modal-section" style="padding-top: 4rem;">
             ${hodHtml}
             ${filterHtml ? '<h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; border-bottom: 2px solid var(--surface-border); padding-bottom: 0.5rem; display: inline-block;">Staff Directory</h3>' : ''}
@@ -919,6 +963,47 @@ document.addEventListener('DOMContentLoaded', () => {
         ${labHtml}
       `;
 
+      // Slider Logic
+      const sliderContainer = modalBody.querySelector('.fac-slider-container');
+      if (sliderContainer) {
+          const slides = Array.from(sliderContainer.querySelectorAll('.fac-slide'));
+          const dots = Array.from(sliderContainer.querySelectorAll('.fac-dot'));
+          const nextBtn = sliderContainer.querySelector('.fac-next');
+          const prevBtn = sliderContainer.querySelector('.fac-prev');
+          let currentSlide = 0;
+          let slideInterval;
+
+          const showSlide = (index) => {
+             slides.forEach(s => s.classList.remove('active'));
+             dots.forEach(d => d.classList.remove('active'));
+             if (index >= slides.length) currentSlide = 0;
+             else if (index < 0) currentSlide = slides.length - 1;
+             else currentSlide = index;
+             
+             slides[currentSlide].classList.add('active');
+             dots[currentSlide].classList.add('active');
+          };
+
+          const nextSlide = () => showSlide(currentSlide + 1);
+          const prevSlide = () => showSlide(currentSlide - 1);
+
+          nextBtn.addEventListener('click', () => { nextSlide(); resetInterval(); });
+          prevBtn.addEventListener('click', () => { prevSlide(); resetInterval(); });
+
+          dots.forEach((dot, i) => {
+             dot.addEventListener('click', () => { showSlide(i); resetInterval(); });
+          });
+
+          const startInterval = () => {
+             slideInterval = setInterval(nextSlide, 3500);
+          };
+          const resetInterval = () => {
+             clearInterval(slideInterval);
+             startInterval();
+          };
+          startInterval();
+      }
+
       // Navigation Logic
       const navBtns = modalBody.querySelectorAll('.modal-nav-btn');
       navBtns.forEach(btn => {
@@ -927,33 +1012,14 @@ document.addEventListener('DOMContentLoaded', () => {
           const targetEl = modalBody.querySelector('#' + targetId);
           if (targetEl) {
             targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            navBtns.forEach(b => {
-                b.classList.remove('active');
-                b.style.color = 'var(--text-secondary)';
-                b.style.borderBottom = '2px solid transparent';
-            });
+            navBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            btn.style.color = 'var(--primary-color)';
-            btn.style.borderBottom = '2px solid var(--primary-color)';
           }
         });
       });
-      // Set initial styles for nav
-      if(navBtns.length > 0) {
-          navBtns.forEach(b => {
-              b.style.background = 'transparent';
-              b.style.border = 'none';
-              b.style.borderBottom = '2px solid transparent';
-              b.style.color = 'var(--text-secondary)';
-              b.style.padding = '10px 15px';
-              b.style.fontWeight = 'bold';
-              b.style.cursor = 'pointer';
-              b.style.fontSize = '1.1rem';
-              b.style.transition = 'all 0.3s';
-          });
-          navBtns[0].classList.add('active');
-          navBtns[0].style.color = 'var(--primary-color)';
-          navBtns[0].style.borderBottom = '2px solid var(--primary-color)';
+      // Set initial state
+      if (navBtns.length > 0) {
+        navBtns[0].classList.add('active');
       }
 
       // Filter Logic
@@ -1000,14 +1066,66 @@ document.addEventListener('DOMContentLoaded', () => {
           card.style.boxShadow = 'none';
         });
       });
+
+      // Slider inner elements style adjustments handled via CSS
       modalOverlay.classList.add('active');
       document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      
+      // CSE Scroll to Top Button
+      let oldBtn = document.getElementById('cse-scroll-top-fixed');
+      if (oldBtn) oldBtn.remove();
+      
+      if (deptKey === 'cse') {
+        const scrollBtn = document.createElement('button');
+        scrollBtn.id = 'cse-scroll-top-fixed';
+        scrollBtn.innerHTML = '&#8593;';
+        scrollBtn.title = 'Scroll to top';
+        scrollBtn.style.cssText = 'position: fixed; bottom: 25px; right: 25px; z-index: 100000; width: 35px; height: 35px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-color), #8b5cf6); border: none; color: #fff; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease, opacity 0.3s ease; opacity: 0; pointer-events: none;';
+        
+        scrollBtn.addEventListener('mouseenter', () => {
+          scrollBtn.style.transform = 'translateY(-3px)';
+        });
+        scrollBtn.addEventListener('mouseleave', () => {
+          scrollBtn.style.transform = 'translateY(0)';
+        });
+
+        scrollBtn.addEventListener('click', () => {
+          const container = document.querySelector('.modal-container');
+          if (container) {
+             container.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+        
+        document.body.appendChild(scrollBtn);
+
+        // Show/hide based on modal scroll
+        const mc = document.querySelector('.modal-container');
+        mc.addEventListener('scroll', function scrollHandler() {
+          if (!document.getElementById('cse-scroll-top-fixed')) {
+            mc.removeEventListener('scroll', scrollHandler);
+            return;
+          }
+          if (mc.scrollTop > 150) {
+            scrollBtn.style.opacity = '1';
+            scrollBtn.style.pointerEvents = 'auto';
+          } else {
+            scrollBtn.style.opacity = '0';
+            scrollBtn.style.pointerEvents = 'none';
+          }
+        });
+      }
     });
   });
+
+  const removeCseScrollBtn = () => {
+    const btn = document.getElementById('cse-scroll-top-fixed');
+    if (btn) btn.remove();
+  };
 
   modalClose.addEventListener('click', () => {
     modalOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    removeCseScrollBtn();
   });
 
   // Close when clicking outside of modal container
@@ -1015,6 +1133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === modalOverlay) {
       modalOverlay.classList.remove('active');
       document.body.style.overflow = '';
+      removeCseScrollBtn();
     }
   });
 });

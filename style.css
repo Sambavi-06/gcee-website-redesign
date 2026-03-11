@@ -876,7 +876,7 @@ footer {
 /* Modal top navigation */
 .sticky-nav {
   position: sticky;
-  top: 15px;
+  top: -5px;
   z-index: 1000;
   display: flex;
   justify-content: center;

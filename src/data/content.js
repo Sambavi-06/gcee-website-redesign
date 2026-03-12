@@ -114,7 +114,184 @@ export const recruiterLogos = [
   { name: 'HCL', logo: 'https://logo.clearbit.com/hcltech.com' },
   { name: 'Capgemini', logo: 'https://logo.clearbit.com/capgemini.com' },
   { name: 'Tech Mahindra', logo: 'https://logo.clearbit.com/techmahindra.com' },
-  { name: 'IBM', logo: 'https://logo.clearbit.com/ibm.com' }
+  { name: 'L&T', logo: 'https://logo.clearbit.com/larsentoubro.com' },
+  { name: 'Nokia', logo: 'https://logo.clearbit.com/nokia.com' },
+  { name: 'Cadence', logo: 'https://logo.clearbit.com/cadence.com' },
+  { name: 'IBM', logo: 'https://logo.clearbit.com/ibm.com' },
+  { name: 'Hexaware', logo: 'https://logo.clearbit.com/hexaware.com' },
+  { name: 'Bosch', logo: 'https://logo.clearbit.com/bosch.com' },
+  { name: 'TAFE', logo: 'https://logo.clearbit.com/tafe.com' }
+];
+
+export const recruiterDetails = [
+  {
+    name: 'TCS',
+    logo: 'https://logo.clearbit.com/tcs.com',
+    about: 'Tata Consultancy Services is a global IT services and consulting organization supporting digital transformation across industries.',
+    industry: 'IT Services & Consulting',
+    visitWindow: 'Typically visits between August and November for pre-final and final year hiring drives.',
+    rolesOffered: ['Assistant System Engineer', 'Developer', 'Digital Profile Engineer', 'Support Analyst'],
+    skillsExpected: ['Data structures and algorithms', 'Programming fundamentals', 'Communication skills', 'Aptitude and reasoning'],
+    packages: 'Typical packages range between 3.4 LPA and 7.2 LPA based on role track.',
+    processSteps: ['Online aptitude assessment', 'Technical screening', 'Managerial discussion', 'HR interview and offer release'],
+    placementStats: 'Strong repeat recruiter with consistent annual bulk hiring from core IT and circuit branches.'
+  },
+  {
+    name: 'Infosys',
+    logo: 'https://logo.clearbit.com/infosys.com',
+    about: 'Infosys is a global leader in next-generation digital services and consulting with strong campus engagement programs.',
+    industry: 'IT Services & Digital Transformation',
+    visitWindow: 'Usually visits from July to October through campus drives and pooled hiring events.',
+    rolesOffered: ['Systems Engineer', 'Specialist Programmer', 'Digital Specialist Engineer', 'Operations Executive'],
+    skillsExpected: ['Object-oriented programming', 'Database basics', 'Problem solving', 'Verbal communication'],
+    packages: 'Typical packages range between 3.6 LPA and 9.5 LPA depending on role.',
+    processSteps: ['Online test', 'Coding challenge', 'Technical interview', 'HR discussion'],
+    placementStats: 'High selection count from CSE, IT, ECE, and allied streams each placement cycle.'
+  },
+  {
+    name: 'Cognizant',
+    logo: 'https://logo.clearbit.com/cognizant.com',
+    about: 'Cognizant provides technology, consulting, and business process services to enterprises worldwide.',
+    industry: 'IT Services & Business Solutions',
+    visitWindow: 'Generally visits during August to December with multiple role-based hiring rounds.',
+    rolesOffered: ['Programmer Analyst Trainee', 'GenC Developer', 'QA Analyst', 'Infra Support Associate'],
+    skillsExpected: ['Coding proficiency', 'Analytical thinking', 'Debugging fundamentals', 'Professional communication'],
+    packages: 'Typical packages range between 4 LPA and 7 LPA.',
+    processSteps: ['Aptitude and communication screening', 'Technical evaluation', 'HR interview', 'Offer rollout'],
+    placementStats: 'Consistent mass recruiter with excellent conversion rates for trained candidates.'
+  },
+  {
+    name: 'Zoho',
+    logo: 'https://logo.clearbit.com/zoho.com',
+    about: 'Zoho builds cloud-based business software products and is known for high-impact engineering roles from campus recruitment.',
+    industry: 'Product Software',
+    visitWindow: 'Visits mostly between September and January for software product development roles.',
+    rolesOffered: ['Software Developer', 'Technical Support Engineer', 'QA Engineer', 'Content/Technical Writer'],
+    skillsExpected: ['Strong coding skills', 'System design fundamentals', 'Problem solving', 'English communication'],
+    packages: 'Typical packages range between 5 LPA and 12 LPA based on profile.',
+    processSteps: ['Programming test', 'Advanced coding round', 'Technical panel interviews', 'Final HR round'],
+    placementStats: 'Recognized premium recruiter with selective, high-value offers to top performers.'
+  },
+  {
+    name: 'HCL',
+    logo: 'https://logo.clearbit.com/hcltech.com',
+    about: 'HCLTech is a global technology company delivering engineering, cloud, and digital services to major enterprises.',
+    industry: 'IT Services, Engineering & R&D',
+    visitWindow: 'Commonly conducts recruitment between August and December.',
+    rolesOffered: ['Graduate Engineer Trainee', 'Software Engineer', 'Support Associate'],
+    skillsExpected: ['Coding basics', 'Networking and OS basics', 'Aptitude', 'Team communication'],
+    packages: 'Typical packages range between 3.5 LPA and 6.5 LPA.',
+    processSteps: ['Aptitude and technical test', 'Group discussion or communication round', 'Technical and HR interview'],
+    placementStats: 'Frequent recruiter with opportunities across IT and service delivery tracks.'
+  },
+  {
+    name: 'Capgemini',
+    logo: 'https://logo.clearbit.com/capgemini.com',
+    about: 'Capgemini is a multinational consulting and technology services company with broad campus hiring programs.',
+    industry: 'Technology Consulting & Services',
+    visitWindow: 'Usually appears in major campus drives from August through November.',
+    rolesOffered: ['Analyst', 'Software Engineer', 'Infrastructure Engineer', 'Consulting Associate'],
+    skillsExpected: ['Programming logic', 'Analytical aptitude', 'Communication and collaboration', 'Adaptability'],
+    packages: 'Typical packages range between 4 LPA and 7.5 LPA.',
+    processSteps: ['Online assessment', 'Technical evaluation', 'Behavioral interview', 'HR finalization'],
+    placementStats: 'Stable annual recruiter with strong opportunities for IT-focused graduates.'
+  },
+  {
+    name: 'Tech Mahindra',
+    logo: 'https://logo.clearbit.com/techmahindra.com',
+    about: 'Tech Mahindra delivers digital transformation, consulting, and business re-engineering services globally.',
+    industry: 'IT Services & Digital Engineering',
+    visitWindow: 'Typically schedules drives during August to December.',
+    rolesOffered: ['Associate Software Engineer', 'Network Engineer', 'Business Process Associate'],
+    skillsExpected: ['Fundamental coding', 'Logical reasoning', 'Network concepts', 'Client communication'],
+    packages: 'Typical packages range between 3.2 LPA and 6 LPA.',
+    processSteps: ['Aptitude test', 'Technical test', 'Technical interview', 'HR interaction'],
+    placementStats: 'Regular recruiter with opportunities in IT and telecom-oriented profiles.'
+  },
+  {
+    name: 'L&T',
+    logo: 'https://logo.clearbit.com/larsentoubro.com',
+    about: 'Larsen & Toubro is a leading engineering and infrastructure conglomerate with strong graduate engineering intake.',
+    industry: 'Engineering, Infrastructure & Manufacturing',
+    visitWindow: 'Usually visits from September to January for engineering and project roles.',
+    rolesOffered: ['Graduate Engineer Trainee', 'Design Engineer', 'Site Engineer', 'Project Planning Associate'],
+    skillsExpected: ['Core engineering fundamentals', 'CAD and design basics', 'Project planning mindset', 'Professional communication'],
+    packages: 'Typical packages range between 4 LPA and 8 LPA depending on domain and role.',
+    processSteps: ['Aptitude and technical test', 'Domain technical interview', 'Managerial round', 'HR round'],
+    placementStats: 'Preferred recruiter for civil, mechanical, EEE, and multidisciplinary engineering students.'
+  },
+  {
+    name: 'Nokia',
+    logo: 'https://logo.clearbit.com/nokia.com',
+    about: 'Nokia builds telecom networks and advanced communications technology for global operators and enterprises.',
+    industry: 'Telecommunications & Network Technology',
+    visitWindow: 'Generally visits between September and February for telecom and software roles.',
+    rolesOffered: ['R&D Engineer', 'Network Software Engineer', 'Testing Engineer', 'Operations Associate'],
+    skillsExpected: ['Computer networks', 'Linux and scripting basics', 'Programming', 'Analytical skills'],
+    packages: 'Typical packages range between 5 LPA and 11 LPA.',
+    processSteps: ['Online technical test', 'Coding or domain round', 'Technical panel interview', 'HR final interview'],
+    placementStats: 'Select recruiter for ECE, CSE, and IT students with strong domain preparation.'
+  },
+  {
+    name: 'Cadence',
+    logo: 'https://logo.clearbit.com/cadence.com',
+    about: 'Cadence develops electronic design automation software and semiconductor design solutions.',
+    industry: 'Semiconductor Design & EDA Software',
+    visitWindow: 'Typically visits in the core placement season from August to December.',
+    rolesOffered: ['Application Engineer', 'R&D Engineer', 'Verification Engineer', 'Software Engineer'],
+    skillsExpected: ['VLSI concepts', 'Digital electronics', 'C/C++ programming', 'Problem solving and communication'],
+    packages: 'Typical packages range between 8 LPA and 16 LPA for selected profiles.',
+    processSteps: ['Online technical screening', 'Domain-specific technical interview', 'Final panel and HR'],
+    placementStats: 'Premium recruiter with selective hiring for high-performing electronics and coding candidates.'
+  },
+  {
+    name: 'IBM',
+    logo: 'https://logo.clearbit.com/ibm.com',
+    about: 'IBM is a global technology and consulting company focused on cloud, AI, enterprise software, and services.',
+    industry: 'Cloud, AI & Enterprise Technology',
+    visitWindow: 'Usually participates between July and December based on hiring demand.',
+    rolesOffered: ['Associate System Engineer', 'Software Developer', 'Data Analyst', 'Technical Support Engineer'],
+    skillsExpected: ['Programming basics', 'Cloud fundamentals', 'Data reasoning', 'Communication and adaptability'],
+    packages: 'Typical packages range between 4.5 LPA and 10 LPA.',
+    processSteps: ['Aptitude and coding test', 'Technical interviews', 'HR and offer formalities'],
+    placementStats: 'Steady recruiter with diversified roles in software, support, and analytics tracks.'
+  },
+  {
+    name: 'Hexaware',
+    logo: 'https://logo.clearbit.com/hexaware.com',
+    about: 'Hexaware is a global IT and digital solutions provider with strong entry-level recruitment initiatives.',
+    industry: 'IT Services & Automation Solutions',
+    visitWindow: 'Typically recruits from August to November during central placement drives.',
+    rolesOffered: ['Trainee Engineer', 'Software Associate', 'Support Engineer'],
+    skillsExpected: ['Logical aptitude', 'Programming fundamentals', 'Testing concepts', 'Communication'],
+    packages: 'Typical packages range between 3.5 LPA and 6.5 LPA.',
+    processSteps: ['Online aptitude test', 'Technical screening', 'Communication round', 'HR interview'],
+    placementStats: 'Reliable recruiter for service and software delivery profiles.'
+  },
+  {
+    name: 'Bosch',
+    logo: 'https://logo.clearbit.com/bosch.com',
+    about: 'Bosch is a global engineering and technology company spanning mobility, industrial, and consumer solutions.',
+    industry: 'Engineering, Automotive & Industrial Technology',
+    visitWindow: 'Usually visits during September to January for engineering and software profiles.',
+    rolesOffered: ['Graduate Engineer Trainee', 'Embedded Engineer', 'Manufacturing Associate', 'Software Engineer'],
+    skillsExpected: ['Core engineering concepts', 'Embedded/system basics', 'Problem solving', 'Team collaboration'],
+    packages: 'Typical packages range between 4.2 LPA and 9 LPA.',
+    processSteps: ['Aptitude and technical test', 'Domain interview', 'Managerial and HR rounds'],
+    placementStats: 'Preferred recruiter for mechanical, automobile, EEE, and ECE focused roles.'
+  },
+  {
+    name: 'TAFE',
+    logo: 'https://logo.clearbit.com/tafe.com',
+    about: 'TAFE is a major tractor and farm equipment manufacturer with strong opportunities for core engineering graduates.',
+    industry: 'Automotive & Farm Equipment Manufacturing',
+    visitWindow: 'Generally conducts recruitment between October and February for manufacturing and product roles.',
+    rolesOffered: ['Graduate Engineer Trainee', 'Production Engineer', 'Quality Engineer', 'Design Engineer'],
+    skillsExpected: ['Manufacturing fundamentals', 'Mechanical design basics', 'Quality tools', 'Communication and discipline'],
+    packages: 'Typical packages range between 3.8 LPA and 7.5 LPA.',
+    processSteps: ['Aptitude test', 'Core technical interview', 'Plant/process interaction', 'HR discussion'],
+    placementStats: 'Strong recruiter for mechanical, automobile, and production-oriented student profiles.'
+  }
 ];
 
 export const placementStories = [

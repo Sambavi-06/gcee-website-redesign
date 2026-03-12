@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import { placementStats, recruiters, recruiterLogos, placementStories } from '../data/content';
+import { placementStats, recruiters, placementStories } from '../data/content';
 import Reveal from './Reveal';
-import 'swiper/css';
+import RecruiterSection from './RecruiterSection';
 
 function CountUp({ value, suffix = '' }) {
   const [count, setCount] = useState(0);
@@ -58,24 +56,7 @@ function Placements() {
         </div>
       </Reveal>
 
-      <Reveal className="mt-10">
-        <Swiper
-          modules={[Autoplay]}
-          autoplay={{ delay: 2000, disableOnInteraction: false }}
-          loop
-          spaceBetween={14}
-          slidesPerView={2}
-          breakpoints={{ 640: { slidesPerView: 3 }, 1024: { slidesPerView: 5 } }}
-        >
-          {recruiterLogos.map((item) => (
-            <SwiperSlide key={item.name}>
-              <div className="section-surface flex h-20 items-center justify-center p-4">
-                <img src={item.logo} alt={item.name} className="h-10 w-auto object-contain" loading="lazy" />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Reveal>
+      <RecruiterSection />
 
       <div className="mt-8 grid gap-6 md:grid-cols-3">
         {placementStories.map((story) => (
@@ -91,7 +72,7 @@ function Placements() {
         <h3 className="text-xl font-bold">Our Campus Recruiters</h3>
         <p className="mt-2 text-sm text-rose-100">Trusted by leading technology, manufacturing, and engineering organizations for quality graduates.</p>
       </Reveal>
-      <style>{`@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33%); } }`}</style>
+      <style>{`@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33%); } } @keyframes recruiter-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }`}</style>
     </section>
   );
 }
